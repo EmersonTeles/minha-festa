@@ -1,5 +1,8 @@
+import Header from "@/components/header";
+import Banner from "@/components/banner";
+import Instructions from "@/components/instructions";
 import Head from "next/head";
-
+import About from "@/components/about";
 export default function Home() {
   return (
     <>
@@ -9,12 +12,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="Home">
-        <section className="banner">
-          <h1 className="title">21 BITS</h1>
-          <h2 className="subtitle">O POBRE VAI VOLTAR A COMER PICANHA</h2>
-          <button className="Confirm_button">Quero participar</button>
-        </section>
+      <main className="main">
+        <Header />
+        <Banner />
+        <About />
+        <Instructions />
       </main>
     </>
   );

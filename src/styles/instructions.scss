@@ -1,0 +1,32 @@
+.instructions {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem;
+  & > h1 {
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-self: flex-start;
+    list-style: none;
+    & > li {
+      & > svg {
+        margin-right: 1rem;
+      }
+      color: white;
+      font-size: 1.5em;
+      font-weight: normal;
+      text-align: start;
+    }
+  }
+}
