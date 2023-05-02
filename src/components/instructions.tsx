@@ -14,16 +14,24 @@ export default function Rules() {
             Sinta-se a vontade para levar bolas, jogos de tabuleiro, baralho, etc.
           </li>
           <li>
-            <Bug />A
+            <Bug />
+            Na chácara possui piscina e cachoeira, então leve roupas de banho.
           </li>
           <li>
-            <Bug />B
+            <Bug />
+            Obviamente se quebrar qualquer coisa, você paga.
           </li>
           <li>
-            <Bug />C
+            <Bug />
+            BLANK
           </li>
           <li>
-            <Bug />D
+            <Bug />
+            BLANK
+          </li>
+          <li>
+            <Bug />
+            BLANK
           </li>
         </ul>
       </div>
