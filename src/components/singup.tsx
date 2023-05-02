@@ -9,7 +9,7 @@ export default function SignInButton({ user }: any) {
           Confirmar presença
         </button>
       ) : (
-        <button type="button" className="Confirm_button" onClick={() => signIn()}>
+        <button type="button" className="Confirm_button" onClick={() => signIn("google")}>
           Quero participar
         </button>
       )}

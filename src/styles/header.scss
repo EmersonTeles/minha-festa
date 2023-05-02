@@ -29,7 +29,7 @@
   gap: 1rem;
   color: white;
   & > h1 {
-    font-size: 1.5em;
+    font-size: clamp(1em, 5vw, 1.5rem);
     font-weight: normal;
   }
   & > button {
