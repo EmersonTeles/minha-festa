@@ -42,6 +42,25 @@
     display: flex;
   }
 }
+.header_black {
+  & > nav {
+    & > ul {
+      & > li {
+        & > a {
+          color: black;
+        }
+      }
+    }
+  }
+  & > .profile {
+    & > h1 {
+      color: black;
+    }
+    & > button {
+      color: black;
+    }
+  }
+}
 @media (max-width: 900px) {
   .header {
     justify-content: center;
