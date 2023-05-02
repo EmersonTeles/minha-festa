@@ -3,7 +3,12 @@ import Banner from "@/components/banner";
 import Instructions from "@/components/instructions";
 import Head from "next/head";
 import About from "@/components/about";
-export default function Home() {
+import { GetServerSideProps } from "next/types";
+import Cards from "@/assets/cards.png";
+import Image from "next/image";
+import { getSession } from "next-auth/react";
+
+function Home({ user }: any) {
   return (
     <>
       <Head>
@@ -13,11 +18,21 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="main">
-        <Header />
+        <Header user={user} />
         <Banner />
         <About />
         <Instructions />
+        <Image className="cardsBlackJack" src={Cards} alt="cards" />
       </main>
     </>
   );
 }
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+  return {
+    props: {
+      user: session?.user ?? null,
+    },
+  };
+};
+export default Home;

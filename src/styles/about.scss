@@ -25,8 +25,21 @@
       color: white;
       font-size: 1.5em;
       font-weight: normal;
-      text-align: center;
-      padding: 0rem 3rem;
+      text-align: justify;
+      padding: 0rem 0rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    &_content {
+      & > h1 {
+        color: black;
+      }
+      & > p {
+        color: black;
+      }
     }
   }
 }

@@ -1,21 +1,22 @@
 .banner {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
+  &_photo {
+    display: none;
+  }
   > img {
     position: absolute;
-    width: 100%;
+    width: 90vw;
     height: -webkit-fill-available;
   }
+  z-index: 1;
 }
 .card {
-  border: 1px solid rgb(60, 60, 60);
-  background-color: rgb(30, 30, 30, 0.5);
-  width: 50rem;
   max-width: 100%;
   padding: 3rem;
   display: flex;
@@ -23,13 +24,15 @@
   justify-content: center;
   flex-direction: column;
   border-radius: 0.5rem;
-  z-index: 1;
 }
 
 .title {
-  font-size: 5rem;
+  font-size: clamp(3rem, 10vw, 6rem);
   color: white;
-  font-family: sans-serif;
+  font-family: Carena, sans-serif;
+  text-shadow: -5px 5px #ff9c03;
+  font-weight: 100;
+  line-height: 1;
   text-align: center;
 }
 .subtitle {
@@ -37,6 +40,7 @@
   color: white;
   font-family: sans-serif;
   text-align: center;
+  font-weight: 100;
 }
 .date {
   color: white;
@@ -45,9 +49,9 @@
 .Confirm_button {
   height: 3rem;
   width: 15rem;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem 0.25rem 1.5rem 0.25rem;
   margin: 2rem;
-  background-color: limegreen;
+  background-color: #ff9c03;
   color: white;
   font-size: 1.5em;
   outline: none;
@@ -56,16 +60,35 @@
 }
 @media (max-width: 1280px) {
   .banner {
-    padding: 4rem 1rem;
+    padding: 0rem 0rem;
   }
   .card {
-    padding: 2rem 1rem;
+    padding: 1rem 0rem;
     justify-content: space-around;
-    gap: 1rem;
+    gap: 0rem;
   }
   .banner_photo {
-    height: 100% !important;
-    width: auto !important;
-    transform: translateX(26%);
+    height: 60vh !important;
+    width: 100% !important;
+    overflow: hidden;
+    border-radius: 3rem;
+    //display: block;
+    & > img {
+      height: -webkit-fill-available;
+      width: inherit;
+    }
+  }
+  .subtitle {
+    font-size: 1.8em;
+  }
+  .Confirm_button {
+    width: 100%;
+    height: 4rem;
+    bottom: 0;
+    margin: 0 1rem;
+    position: fixed;
+    border-radius: 3rem 3rem 0rem 0rem;
+    background-color: #2f332e;
+    z-index: 10;
   }
 }

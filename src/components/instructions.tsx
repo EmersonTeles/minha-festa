@@ -13,16 +13,16 @@ export default function Rules() {
           Sinta-se a vontade para levar bolas, jogos de tabuleiro, baralho, etc.
         </li>
         <li>
+          <Bug />A
+        </li>
+        <li>
           <Bug />B
         </li>
         <li>
+          <Bug />C
+        </li>
+        <li>
           <Bug />D
-        </li>
-        <li>
-          <Bug />E
-        </li>
-        <li>
-          <Bug />F
         </li>
       </ul>
     </section>

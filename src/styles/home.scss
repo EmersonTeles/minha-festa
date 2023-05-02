@@ -1,5 +1,22 @@
 .main {
-  background-color: black;
+  background: linear-gradient(to bottom, #2da1ab 0%, #effcf8 40%);
   width: 100%;
   min-height: 100vh;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+.cardsBlackJack {
+  position: absolute;
+  top: 50vh;
+  left: -5%;
+  opacity: 0.1;
+  transform: rotate(25deg);
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .cardsBlackJack {
+    width: 60vw;
+    left: -10%;
+    height: auto;
+  }
 }

@@ -20,7 +20,7 @@ export default function MyGallery() {
   ];
   //const widths = [3024, 3024, 3024, 3024];
   //const ratios = [1, 6, 4, 2];
-  const widths = [4000, 5000, 1000];
+  const widths = [4000, 3000, 1000];
   const ratios = [2.2, 4, 6, 8];
   return <Gallery initState={false} images={images} widths={widths} ratios={ratios} />;
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Avatar from "@/assets/avatar.jpg";
-export default function Header() {
+export default function Header({ user }: any) {
   return (
     <header className="header">
       <nav>
@@ -19,12 +19,14 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <div className="profile">
-        <h1>
-          Olá, <span className="user_name">Fulano</span>
-        </h1>
-        <Image src={Avatar} alt="profile" />
-      </div>
+      {user && (
+        <div className="profile">
+          <h1>
+            Olá, <span className="user_name">{user.name}</span>
+          </h1>
+          <Image src={Avatar} alt="profile" />
+        </div>
+      )}
     </header>
   );
 }

@@ -1,15 +1,18 @@
 import Image from "next/image";
-import mclovin from "@/assets/mclovin.png";
+import mclovin from "@/assets/selfie.png";
+import SingupButton from "./singup";
 export default function Banner() {
   return (
     <section className="banner">
-      <div className="card">
-        <h1 className="title">21 BITS</h1>
-        <h2 className="subtitle">Você está convidado para o meu aniversário de 21 anos</h2>
-        <button className="Confirm_button">Quero participar</button>
-        <h3 className="date">Dias 27 e 28 de maio</h3>
+      <div className="banner_photo">
+        <Image src={mclovin} alt="" />
       </div>
-      <Image className="banner_photo" src={mclovin} alt="" />
+      <div className="card">
+        <h1 className="title">Você está convidado</h1>
+        <h3 className="date">Dias 27 e 28 de maio</h3>
+        <p></p>
+      </div>
+      <SingupButton />
     </section>
   );
 }

@@ -5,10 +5,10 @@
   justify-content: flex-start;
   flex-direction: column;
   gap: 3rem;
-  padding: 3rem;
+  padding-top: 3rem;
   & > h1 {
     color: white;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: bold;
     text-align: center;
   }
@@ -27,6 +27,21 @@
       font-size: 1.5em;
       font-weight: normal;
       text-align: start;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .instructions {
+    & > h1 {
+      color: black;
+    }
+    & > ul {
+      & > li {
+        & > svg {
+          fill: black;
+        }
+        color: black;
+      }
     }
   }
 }
