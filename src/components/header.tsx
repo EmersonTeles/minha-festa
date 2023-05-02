@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Avatar from "@/assets/avatar.jpg";
+import { signOut } from "next-auth/react";
+import { MdOutlineLogout } from "react-icons/md";
 export default function Header({ user }: any) {
   return (
     <header className="header">
@@ -24,7 +24,9 @@ export default function Header({ user }: any) {
           <h1>
             Olá, <span className="user_name">{user.name}</span>
           </h1>
-          <Image src={Avatar} alt="profile" />
+          <button type="button" className="logout" onClick={() => signOut()}>
+            <MdOutlineLogout />
+          </button>
         </div>
       )}
     </header>

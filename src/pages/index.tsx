@@ -6,9 +6,10 @@ import About from "@/components/about";
 import { GetServerSideProps } from "next/types";
 import Cards from "@/assets/cards.png";
 import Image from "next/image";
-import { getSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 
 function Home({ user }: any) {
+  const { data: session } = useSession();
   return (
     <>
       <Head>
@@ -18,7 +19,7 @@ function Home({ user }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="main">
-        <Header user={user} />
+        <Header user={session?.user} />
         <Banner />
         <About />
         <Instructions />
@@ -29,6 +30,7 @@ function Home({ user }: any) {
 }
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
+
   return {
     props: {
       user: session?.user ?? null,

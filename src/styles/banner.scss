@@ -47,8 +47,8 @@
 }
 
 .Confirm_button {
-  height: 3rem;
-  width: 15rem;
+  height: 3.5rem;
+  width: 18rem;
   border-radius: 1.5rem 0.25rem 1.5rem 0.25rem;
   margin: 2rem;
   background-color: #ff9c03;
@@ -90,5 +90,8 @@
     border-radius: 3rem 3rem 0rem 0rem;
     background-color: #2f332e;
     z-index: 10;
+  }
+  .confirm {
+    background-color: #ff9c03;
   }
 }
