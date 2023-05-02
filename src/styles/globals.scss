@@ -17,6 +17,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
 @font-face {
   font-family: Carena;
   src: url("https://media-prd.coachella.com/templates/template10/fonts/Carena-Regular.woff")

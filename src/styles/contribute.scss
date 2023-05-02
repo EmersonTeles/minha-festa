@@ -1,0 +1,17 @@
+.contribute {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  &_content {
+    max-width: 1440px;
+    width: -webkit-fill-available;
+    & > h1 {
+      color: black;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}

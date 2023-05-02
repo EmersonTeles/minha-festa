@@ -5,8 +5,13 @@ import Head from "next/head";
 import About from "@/components/about";
 import { GetServerSideProps } from "next/types";
 import Cards from "@/assets/cards.png";
+import TreesLeft from "@/assets/trees-left.png";
+import TreesRight from "@/assets/trees-right.png";
 import Image from "next/image";
 import { getSession, useSession } from "next-auth/react";
+import Location from "@/components/location";
+import Contribute from "@/components/contribute";
+import { SignInModal } from "@/components/signInModal";
 
 function Home({ user }: any) {
   const { data: session } = useSession();
@@ -23,7 +28,12 @@ function Home({ user }: any) {
         <Banner />
         <About />
         <Instructions />
+        <Contribute />
+        <Location />
+        <SignInModal />
         <Image className="cardsBlackJack" src={Cards} alt="cards" />
+        <Image className="TreesLeft" src={TreesLeft} alt="TreesLeft" />
+        <Image className="TreesRight" src={TreesRight} alt="TreesRight" />
       </main>
     </>
   );

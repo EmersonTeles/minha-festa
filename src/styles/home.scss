@@ -1,5 +1,5 @@
 .main {
-  background: linear-gradient(to bottom, #2da1ab 0%, #effcf8 40%);
+  background: linear-gradient(to bottom, #2da1ab 0%, #effcf8 60%);
   width: 100%;
   min-height: 100vh;
   padding: 0 1.5rem;
@@ -13,10 +13,79 @@
   transform: rotate(25deg);
   z-index: 0;
 }
+.TreesLeft {
+  position: absolute;
+  left: -5rem;
+  top: 150vh;
+  z-index: 0;
+  width: 40rem;
+  height: auto;
+  height: auto;
+  animation-name: rotateLeft;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+.TreesRight {
+  position: absolute;
+  right: -5rem;
+  top: 10vh;
+  z-index: 0;
+  width: 30rem;
+  height: auto;
+  animation-name: rotateRight;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+@keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotateLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @media (max-width: 768px) {
+  .main {
+    background: linear-gradient(to bottom, #2da1ab 0%, #effcf8 40%);
+  }
   .cardsBlackJack {
     width: 60vw;
     left: -10%;
     height: auto;
+  }
+  .TreesLeft {
+    position: absolute;
+    left: -3rem;
+    top: 150vh;
+    z-index: 0;
+    width: 60vw;
+    display: none;
+  }
+  .TreesRight {
+    position: absolute;
+    right: -3rem;
+    top: 10vh;
+    z-index: 0;
+    width: 60vw;
+    height: auto;
+    display: none;
   }
 }

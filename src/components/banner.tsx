@@ -1,6 +1,6 @@
 import Image from "next/image";
 import mclovin from "@/assets/selfie.png";
-import SingupButton from "./singup";
+import SingupButton from "./signInButton";
 export default function Banner() {
   return (
     <section className="banner">
