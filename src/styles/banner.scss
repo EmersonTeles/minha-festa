@@ -34,6 +34,7 @@
   font-weight: 100;
   line-height: 1;
   text-align: center;
+  animation: changeColors 20s ease-in-out 0s infinite forwards;
 }
 .subtitle {
   font-size: 2rem;
@@ -72,11 +73,13 @@
     width: 100% !important;
     overflow: hidden;
     border-radius: 3rem;
-    //display: block;
     & > img {
       height: -webkit-fill-available;
       width: inherit;
     }
+  }
+  .title {
+    text-shadow: -3px 3px #ff9c03;
   }
   .subtitle {
     font-size: 1.8em;
@@ -93,5 +96,22 @@
   }
   .confirm {
     background-color: #ff9c03;
+  }
+}
+@keyframes changeColors {
+  0% {
+    text-shadow: #ff9c03;
+  }
+  25% {
+    text-shadow: #ff03b3;
+  }
+  50% {
+    text-shadow: #03ff03;
+  }
+  75% {
+    text-shadow: #eeff03;
+  }
+  100% {
+    text-shadow: #ff9c03;
   }
 }

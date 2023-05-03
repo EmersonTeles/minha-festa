@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
+    "mongodb": "^5.3.0",
     "next": "13.3.1",
     "next-auth": "^4.22.1",
     "next-gallery": "^1.2.1",
