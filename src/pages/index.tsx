@@ -3,7 +3,7 @@ import Banner from "@/components/banner";
 import Instructions from "@/components/instructions";
 import Head from "next/head";
 import About from "@/components/about";
-import { GetServerSideProps } from "next/types";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next/types";
 import Cards from "@/assets/cards.png";
 import TreesLeft from "@/assets/trees-left.png";
 import TreesRight from "@/assets/trees-right.png";
@@ -12,9 +12,11 @@ import { getSession, useSession } from "next-auth/react";
 import Location from "@/components/location";
 import Contribute from "@/components/contribute";
 import { SignInModal } from "@/components/signInModal";
+import clientPromise from "@/lib/mongodb";
 
-function Home({ user }: any) {
+function Home({ isConnected, user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { data: session } = useSession();
+  console.log("db conexão: ", isConnected);
   return (
     <>
       <Head>
@@ -24,6 +26,7 @@ function Home({ user }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="main">
+        <div className={isConnected ? "main_db-true" : "main_db-false"}></div>
         <Header user={session?.user} />
         <Banner />
         <About />
@@ -40,11 +43,16 @@ function Home({ user }: any) {
 }
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
-
-  return {
-    props: {
-      user: session?.user ?? null,
-    },
-  };
+  try {
+    await clientPromise;
+    return {
+      props: { isConnected: true },
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      props: { isConnected: false },
+    };
+  }
 };
 export default Home;

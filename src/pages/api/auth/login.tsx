@@ -16,10 +16,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const db = client.db("minha-festa-db");
   const users = db.collection("users");
-  const result = users.insertOne({
-    name: name,
-    email: email,
-    image: image,
-  });
-  return res.status(200).json(result);
+  try {
+    const result = users.insertOne({
+      name: name,
+      email: email,
+      image: image,
+      createdAt: new Date(),
+    });
+    return res.status(200).json(result);
+  } catch (err) {
+    console.log("erro login:", err);
+    return res.status(400).json(err);
+  }
 }
