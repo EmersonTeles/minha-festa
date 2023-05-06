@@ -1,9 +1,9 @@
-import NextAuth, { Account, Profile, Session, User } from "next-auth";
+import NextAuth, { Account, Profile, User } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import type { NextAuthOptions } from "next-auth";
 import { AdapterUser } from "next-auth/adapters";
-
+import api from "@/utils/api";
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
@@ -22,16 +22,11 @@ export const authOptions: NextAuthOptions = {
       profile?: Profile | undefined;
     }) {
       try {
-        await fetch(`${process.env.NEXTAUTH_URL}api/auth/login`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: params.user.name,
-            email: params.user.email,
-            image: params.user.image,
-          }),
+        const res = await api.post(`api/auth/login`, {
+          name: params.user.name,
+          email: params.user.email,
+          image: params.user.image,
+          provider: params.account?.provider,
         });
         return true;
       } catch (err) {

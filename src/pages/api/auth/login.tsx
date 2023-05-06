@@ -7,20 +7,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
-  const { name, email, image } = req.body;
+  const { name, email, image, provider } = req.body;
 
   const db = (await MongoClient).db("minha-festa-db");
   const users = db.collection("users");
-  try {
-    const result = users.insertOne({
-      name: name,
-      email: email,
-      image: image,
-      createdAt: getISOStringWithTimezone(),
-    });
-    return res.status(200).json(result);
-  } catch (err) {
-    console.log("erro login:", err);
-    return res.status(400).json(err);
+  const user = await users.findOne({ email: email });
+
+  if (user) {
+    return res.status(200).json(user);
+  } else {
+    try {
+      const result = users.insertOne({
+        name: name,
+        email: email,
+        image: image,
+        provider: provider,
+        createdAt: getISOStringWithTimezone(),
+      });
+      return res.status(200).json(result);
+    } catch (err) {
+      console.log("erro login:", err);
+      return res.status(400).json(err);
+    }
   }
 }
