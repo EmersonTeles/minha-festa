@@ -7,6 +7,7 @@ import "@/styles/about.scss";
 import "@/styles/location.scss";
 import "@/styles/contribute.scss";
 import "@/styles/signInModal.scss";
+import "@/styles/formModal.scss";
 
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";

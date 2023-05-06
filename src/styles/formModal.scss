@@ -1,0 +1,99 @@
+.FormModal {
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  animation: modalBg 0.5s ease-in-out forwards;
+  animation-iteration-count: 1;
+  &_form {
+    background-color: white;
+    width: 400px;
+    max-width: 90vw;
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    animation: modalCard 0.25s ease-in-out forwards;
+    animation-iteration-count: 1;
+    & > button[type="submit"] {
+      font-family: sans-serif;
+      height: 3rem;
+      background-color: #2da1ab;
+      color: white;
+      font-size: 1.1em;
+      font-weight: 500;
+      padding: 0 1rem;
+      border-radius: 0.5rem;
+      transition: 0.2s all ease-in-out;
+      &:hover {
+        background-color: #237e86;
+      }
+    }
+    &_inputGroup {
+      width: 100%;
+      & > h1,
+      p {
+        font-family: "system-ui", sans-serif;
+        font-weight: normal;
+      }
+      &-radio {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+        & > input {
+          display: none;
+        }
+        & > input:checked + label {
+          background-color: #ff9c03;
+          color: white;
+        }
+        & > label {
+          cursor: pointer;
+          height: 2rem;
+          width: -webkit-fill-available;
+          min-width: 5rem;
+          border-radius: 0.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: sans-serif;
+          background-color: rgb(240, 240, 240);
+          transition: 0.4s all ease-in-out;
+        }
+      }
+      &-select {
+        width: 100%;
+        height: 2rem;
+        margin-top: 0.25rem;
+        border-radius: 0.25rem;
+        border: 1px solid rgb(200, 200, 200);
+        outline: none;
+        padding: 0.5rem;
+        font-family: sans-serif;
+        font-size: 1rem;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        appearance: none;
+        background-color: rgb(240, 240, 240);
+        transition: 0.4s all ease-in-out;
+        &:hover {
+          background-color: rgb(220, 220, 220);
+        }
+        & > option {
+          font-family: sans-serif;
+        }
+      }
+    }
+  }
+}
