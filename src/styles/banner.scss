@@ -52,12 +52,22 @@
   width: 18rem;
   border-radius: 1.5rem 0.25rem 1.5rem 0.25rem;
   margin: 2rem;
-  background-color: #ff9c03;
+  background-color: #2f332e;
   color: white;
   font-size: 1.5em;
   outline: none;
   border: none;
   cursor: pointer;
+  transition: 0.1s all ease-in-out;
+  &:hover {
+    background-color: rgba(47, 51, 46, 0.8);
+  }
+}
+.confirm {
+  background-color: #ff9c03;
+  &:hover {
+    background-color: rgb(255, 156, 3, 0.8);
+  }
 }
 @media (max-width: 768px) {
   .banner {
@@ -93,25 +103,5 @@
     border-radius: 3rem 3rem 0rem 0rem;
     background-color: #2f332e;
     z-index: 10;
-  }
-  .confirm {
-    background-color: #ff9c03;
-  }
-}
-@keyframes changeColors {
-  0% {
-    text-shadow: #ff9c03;
-  }
-  25% {
-    text-shadow: #ff03b3;
-  }
-  50% {
-    text-shadow: #03ff03;
-  }
-  75% {
-    text-shadow: #eeff03;
-  }
-  100% {
-    text-shadow: #ff9c03;
   }
 }
