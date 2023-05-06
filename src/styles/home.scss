@@ -2,9 +2,26 @@
   background: linear-gradient(to bottom, #2da1ab 0%, #effcf8 60%);
   width: 100%;
   min-height: 100vh;
-  padding: 0 1.5rem;
   box-sizing: border-box;
   padding-bottom: 8rem;
+  &_db-true {
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: green;
+  }
+  &_db-false {
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: red;
+  }
 }
 .cardsBlackJack {
   position: absolute;

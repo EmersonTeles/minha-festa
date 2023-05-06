@@ -1,74 +1,46 @@
-import NextAuth from "next-auth";
+import NextAuth, { Account, Profile, Session, User } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import GithubProvider, { GithubProfile } from "next-auth/providers/github";
-import CredentialsProvider from "next-auth/providers/credentials";
-export const authOptions = {
+import GithubProvider from "next-auth/providers/github";
+import type { NextAuthOptions } from "next-auth";
+import { AdapterUser } from "next-auth/adapters";
+
+export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID || "",
       clientSecret: process.env.GOOGLE_SECRET || "",
-      async profile(profile) {
-        console.log("google profile: ", profile);
-        const res = await fetch("http://localhost:3000/api/auth/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: profile.name,
-            email: profile.email,
-            image: profile.picture,
-          }),
-        });
-        console.log("res google", res);
-        return {
-          id: profile.sub,
-          name: profile.name,
-          email: profile.email,
-          image: profile.picture,
-        };
-      },
     }),
     GithubProvider({
       clientId: process.env.GITHUB_ID || "",
       clientSecret: process.env.GITHUB_SECRET || "",
-      async profile(profile) {
-        console.log("github profile: ", profile);
-        const res = await fetch("http://localhost:3000/api/auth/login", {
+    }),
+  ],
+  callbacks: {
+    async signIn(params: {
+      user: User | AdapterUser;
+      account: Account | null;
+      profile?: Profile | undefined;
+    }) {
+      try {
+        await fetch(`${process.env.NEXTAUTH_URL}api/auth/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: profile.name,
-            email: profile.email,
-            image: profile.avatar_url,
+            name: params.user.name,
+            email: params.user.email,
+            image: params.user.image,
           }),
         });
-        console.log("res google", res);
-        return {
-          id: profile.id.toString(),
-          name: profile.name,
-          email: profile.email,
-          image: profile.avatar_url,
-        };
-      },
-    }),
-    CredentialsProvider({
-      name: "Credentials",
-      credentials: {},
-      async authorize(credentials: any) {
-        console.log("credentials here", credentials);
-        return {
-          id: credentials.id,
-          name: credentials.name,
-          email: credentials.email,
-          image: credentials.image,
-        };
-      },
-    }),
-  ],
-  secret: process.env.SECRET || "",
+        return true;
+      } catch (err) {
+        console.log(err);
+        return false;
+      }
+    },
+  },
+  secret: process.env.NEXTAUTH_SECRET || "",
 };
 
 export default NextAuth(authOptions);
