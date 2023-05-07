@@ -29,6 +29,10 @@ export default function Contribute() {
           isso, pensei em estabelecer um valor por pessoa pra cobrir toda a comida e parte da bebida
           dentro da chácara, e quem puder levar bebida extra, fique à vontade.
         </p>
+        <span>
+          *Esse valor <b>não é</b> um ingresso, então se estou te convidando, <b>quero que vá</b>{" "}
+          mesmo que não possa contribuir com nada!
+        </span>
         <ul>
           <label>Incluso:</label>
           <li>Almoço - Sábado</li>

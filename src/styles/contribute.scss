@@ -29,6 +29,13 @@
       text-align: center;
       margin-top: 2rem;
     }
+    & > span {
+      color: black;
+      font-size: 1.2em;
+      font-weight: normal;
+      text-align: justify;
+      font-family: system-ui;
+    }
     & > ul {
       display: flex;
       flex-direction: column;
