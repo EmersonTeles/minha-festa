@@ -7,10 +7,11 @@ export default function About() {
       <div className="about_content">
         <h1>O que esperar?</h1>
         <p>
-          Serão 2 dias de festa na chácara da minha família, que fica próximo à cocalzinho-GO, 1
-          Hora de taguatinga. A festa começará no dia 27/05 às 09:00 e terminará no dia 28/05 (Meu
-          aniversário) às 18:00. Terá comida, bebida, piscina, jogos, música e cachoeira.
-          Basicamente tudo que um ser humano precisa para ser feliz.
+          Olá amigox, estarei fazendo <b>21 anos</b>, e pretendo fazer 2 DIAS de festa na chácara da
+          minha família, que fica próximo à cocalzinho-GO, 1 Hora de taguatinga. A festa começará no
+          dia 27/05 às 09:00 e terminará no dia 28/05 (Meu aniversário) às 18:00. Terá comida,
+          bebida, piscina, jogos, música e cachoeira. Basicamente tudo que um ser humano precisa
+          para ser feliz.
         </p>
 
         <MyGallery />
