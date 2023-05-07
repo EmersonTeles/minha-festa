@@ -70,6 +70,7 @@
           font-family: sans-serif;
           background-color: rgb(240, 240, 240);
           transition: 0.4s all ease-in-out;
+          color: black;
         }
       }
       &-select {
@@ -92,6 +93,45 @@
         }
         & > option {
           font-family: sans-serif;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .FormModal {
+    &_form {
+      &_inputGroup {
+        &-radio {
+          & > label {
+            color: black;
+            font-weight: 600;
+            font-family: "system-ui", sans-serif;
+          }
+        }
+        &-select {
+          width: 100%;
+          height: 2rem;
+          margin-top: 0.25rem;
+          border-radius: 0.25rem;
+          border: 1px solid rgb(200, 200, 200);
+          outline: none;
+          padding: 0.5rem;
+          font-family: sans-serif;
+          font-size: 1rem;
+          color: rgb(0, 0, 0);
+          cursor: pointer;
+          appearance: none;
+          background-color: rgb(240, 240, 240);
+          transition: 0.4s all ease-in-out;
+          &:hover {
+            background-color: rgb(220, 220, 220);
+          }
+          & > option {
+            font-family: "system-ui", sans-serif;
+            font-weight: 600;
+            text-align: center;
+          }
         }
       }
     }
