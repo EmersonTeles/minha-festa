@@ -30,8 +30,8 @@ export default function Contribute() {
           dentro da chácara, e quem puder levar bebida extra, fique à vontade.
         </p>
         <span>
-          *Esse valor <b>não é</b> um ingresso, então se estou te convidando, <b>quero que vá</b>{" "}
-          mesmo que não possa contribuir com nada!
+          *Esse valor <b>não é</b> um ingresso, então se estou te convidando,{" "}
+          <b>Eu quero que você vá</b> mesmo que não possa contribuir com nada!
         </span>
         <ul>
           <label>Incluso:</label>

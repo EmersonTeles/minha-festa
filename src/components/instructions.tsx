@@ -19,19 +19,8 @@ export default function Rules() {
           </li>
           <li>
             <Bug />
-            Obviamente se quebrar qualquer coisa, você paga.
-          </li>
-          <li>
-            <Bug />
-            BLANK
-          </li>
-          <li>
-            <Bug />
-            BLANK
-          </li>
-          <li>
-            <Bug />
-            BLANK
+            Só teremos bebidas de qualidade questionavél, então se gosta de algo diferenciado,
+            sinta-se a vontade.
           </li>
         </ul>
       </div>
