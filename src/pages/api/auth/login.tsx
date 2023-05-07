@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         email: email,
         image: image,
         provider: provider,
-        confirmed: false,
+        isConfirmed: false,
         confirmedAt: null,
         createdAt: getISOStringWithTimezone(),
       });

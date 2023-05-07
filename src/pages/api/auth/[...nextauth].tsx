@@ -1,9 +1,11 @@
-import NextAuth, { Account, Profile, User } from "next-auth";
+import NextAuth, { Account, Profile, Session, User } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import type { NextAuthOptions } from "next-auth";
 import { AdapterUser } from "next-auth/adapters";
 import api from "@/utils/api";
+import MongoClient from "@/lib/mongodb";
+
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
@@ -33,6 +35,17 @@ export const authOptions: NextAuthOptions = {
         console.log(err);
         return false;
       }
+    },
+    session: async (params: any) => {
+      if (!params.session) return;
+      if (params.session.user.isConfirmed) return params.session;
+      const db = (await MongoClient).db("minha-festa-db");
+      const usersCollection = db.collection("users");
+      const userData = await usersCollection.findOne({
+        email: params.session.user.email,
+      });
+      params.session.user.isConfirmed = userData?.isConfirmed || false;
+      return params.session;
     },
   },
   secret: process.env.NEXTAUTH_SECRET || "",

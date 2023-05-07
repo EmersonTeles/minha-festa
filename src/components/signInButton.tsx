@@ -13,13 +13,13 @@ export default function SignInButton() {
   }
   return (
     <>
-      {session?.user ? (
-        <button type="button" className="Confirm_button confirm" onClick={toggleConfirmModal}>
-          Confirmar presença
-        </button>
-      ) : (
+      {!session?.user ? (
         <button type="button" className="Confirm_button" onClick={toggleSignInModal}>
           Quero participar
+        </button>
+      ) : (
+        <button type="button" className="Confirm_button confirm" onClick={toggleConfirmModal}>
+          Confirmar presença
         </button>
       )}
     </>

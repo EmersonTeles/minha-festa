@@ -1,10 +1,10 @@
 .instructions {
-  min-height: 60vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  padding: 2rem 4rem;
+  padding: 4rem;
   &_content {
     max-width: 1440px;
     width: -webkit-fill-available;

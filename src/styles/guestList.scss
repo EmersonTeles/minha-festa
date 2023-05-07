@@ -1,0 +1,24 @@
+.guestList {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 4rem;
+  &_content {
+    max-width: 1440px;
+    width: -webkit-fill-available;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > h1 {
+      color: black;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+    }
+    & > table {
+    }
+  }
+}

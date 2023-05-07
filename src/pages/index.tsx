@@ -14,6 +14,7 @@ import Contribute from "@/components/contribute";
 import { SignInModal } from "@/components/signInModal";
 import clientPromise from "@/lib/mongodb";
 import FormModal from "@/components/formModal";
+import GuestList from "@/components/guestList";
 
 function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { data: session } = useSession();
@@ -42,6 +43,7 @@ function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideP
         <Instructions />
         <Contribute />
         <Location />
+        <GuestList />
         <SignInModal />
         <FormModal />
         <Image className="cardsBlackJack" src={Cards} alt="cards" />

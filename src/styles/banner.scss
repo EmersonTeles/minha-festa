@@ -14,6 +14,40 @@
     width: 90vw;
     height: -webkit-fill-available;
   }
+  &_confirmed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    &-title {
+      color: white;
+    }
+    &-button {
+      color: white;
+      background-color: #ff9c03;
+      height: 2.5rem;
+      width: 10rem;
+      border-radius: 01rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: normal;
+      font-family: sans-serif;
+    }
+    &-contribute {
+      color: white;
+      background-color: #3f3f3f;
+      height: 2rem;
+      width: 7rem;
+      border-radius: 01rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: normal;
+      font-family: sans-serif;
+    }
+  }
   z-index: 4;
 }
 .card {
@@ -72,6 +106,9 @@
 @media (max-width: 768px) {
   .banner {
     padding: 0rem 0rem;
+    &_confirmed {
+      margin-top: 1rem;
+    }
   }
   .card {
     padding: 1rem 0rem;

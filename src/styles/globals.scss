@@ -31,3 +31,18 @@ button {
   font-style: normal;
   font-weight: 400;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: white;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(180, 180, 180);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff9c03;
+}

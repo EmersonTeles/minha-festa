@@ -1,22 +1,22 @@
 import { Gallery } from "./Gallery";
-import gallerr01 from "../assets/gallery01.jpeg";
-import gallerr02 from "../assets/gallery02.jpeg";
-import gallerr03 from "../assets/gallery03.jpeg";
-import gallerr04 from "../assets/gallery04.jpeg";
-import gallerr05 from "../assets/gallery05.jpg";
-import gallerr06 from "../assets/gallery06.jpeg";
-import gallerr07 from "../assets/gallery07.jpeg";
+import gallery01 from "../assets/gallery01.jpeg";
+import gallery02 from "../assets/gallery02.jpeg";
+import gallery03 from "../assets/gallery03.jpeg";
+import gallery04 from "../assets/gallery04.jpeg";
+import gallery05 from "../assets/gallery05.jpg";
+import gallery06 from "../assets/gallery06.jpeg";
+import gallery07 from "../assets/gallery07.jpeg";
 import { useEffect, useState } from "react";
 
 export default function MyGallery() {
   const images = [
-    { src: gallerr02, aspect_ratio: 9 / 12 },
-    { src: gallerr01, aspect_ratio: 9 / 12 },
-    { src: gallerr03, aspect_ratio: 9 / 12 },
-    { src: gallerr04, aspect_ratio: 2 / 2 },
-    { src: gallerr07, aspect_ratio: 12 / 9 },
-    { src: gallerr06, aspect_ratio: 9 / 12 },
-    { src: gallerr05, aspect_ratio: 20 / 9 },
+    { src: gallery02, aspect_ratio: 9 / 12 },
+    { src: gallery01, aspect_ratio: 9 / 12 },
+    { src: gallery03, aspect_ratio: 9 / 12 },
+    { src: gallery04, aspect_ratio: 2 / 2 },
+    { src: gallery07, aspect_ratio: 12 / 9 },
+    { src: gallery06, aspect_ratio: 9 / 12 },
+    { src: gallery05, aspect_ratio: 20 / 9 },
   ];
   const [width, setWidth] = useState<number | undefined>(undefined);
 

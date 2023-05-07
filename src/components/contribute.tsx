@@ -20,7 +20,7 @@ export default function Contribute() {
     return <MdContentCopy />;
   };
   return (
-    <section className="contribute">
+    <section className="contribute" id="contribute">
       <div className="contribute_content">
         <h1>Contribua</h1>
         <p>
