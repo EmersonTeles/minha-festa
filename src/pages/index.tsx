@@ -25,7 +25,13 @@ function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideP
           name="description"
           content="Olá amigos, estarei fazendo 21 anos, e você foi convidado!"
         />
+        <meta property="og:title" content="Você foi convidado para o meu aniversário!" />
+
+        <meta property="og:type" content="public_figure" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content="https://iili.io/HSPh5np.jpg" />
+        <meta property="og:url" content="https://minha-festa.emersonteles.tech" />
+        <meta property="og:site_name" content="Minha Festa de 21" />
         <link rel="icon" href="/Logo load.png" />
       </Head>
       <main className="main">
