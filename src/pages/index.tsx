@@ -43,7 +43,6 @@ function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideP
         <Instructions />
         <Contribute />
         <Location />
-        <GuestList />
         <SignInModal />
         <FormModal />
         <Image className="cardsBlackJack" src={Cards} alt="cards" />
