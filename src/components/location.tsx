@@ -14,6 +14,7 @@ export default function Location() {
           style={{ border: 0 }}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          title="mapa"
         ></iframe>
       </div>
     </section>

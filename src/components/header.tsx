@@ -38,7 +38,12 @@ export default function Header({ user }: any) {
           <h1>
             Olá, <span className="user_name">{user.name}</span>
           </h1>
-          <button type="button" className="logout" onClick={() => signOut()}>
+          <button
+            className="profile_logout"
+            type="button"
+            title="logout-button"
+            onClick={() => signOut()}
+          >
             <MdOutlineLogout />
           </button>
         </div>

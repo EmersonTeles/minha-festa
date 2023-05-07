@@ -65,7 +65,7 @@
   font-weight: 600;
 }
 .open {
-  display: flex;
+  display: flex !important;
 }
 .googleSignIn {
   background-color: #4285f4;

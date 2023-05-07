@@ -8,15 +8,15 @@ import Cards from "@/assets/cards.png";
 import TreesLeft from "@/assets/trees-left.png";
 import TreesRight from "@/assets/trees-right.png";
 import Image from "next/image";
-import { getSession, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Location from "@/components/location";
 import Contribute from "@/components/contribute";
 import { SignInModal } from "@/components/signInModal";
 import clientPromise from "@/lib/mongodb";
+import FormModal from "@/components/formModal";
 
-function Home({ isConnected, user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { data: session } = useSession();
-  console.log();
   return (
     <>
       <Head>
@@ -34,6 +34,7 @@ function Home({ isConnected, user }: InferGetServerSidePropsType<typeof getServe
         <Contribute />
         <Location />
         <SignInModal />
+        <FormModal />
         <Image className="cardsBlackJack" src={Cards} alt="cards" />
         <Image className="TreesLeft" src={TreesLeft} alt="TreesLeft" />
         <Image className="TreesRight" src={TreesRight} alt="TreesRight" />
@@ -42,7 +43,6 @@ function Home({ isConnected, user }: InferGetServerSidePropsType<typeof getServe
   );
 }
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
   try {
     await clientPromise;
     return {

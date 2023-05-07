@@ -6,7 +6,6 @@ import gallerr04 from "../assets/gallery04.jpeg";
 import gallerr05 from "../assets/gallery05.jpg";
 import gallerr06 from "../assets/gallery06.jpeg";
 import gallerr07 from "../assets/gallery07.jpeg";
-import gallerr08 from "../assets/gallery08.jpg";
 import { useEffect, useState } from "react";
 
 export default function MyGallery() {

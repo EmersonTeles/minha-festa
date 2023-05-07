@@ -1,7 +1,16 @@
 export default function FormModal() {
+  function toggleModal() {
+    const modal = document.querySelector("#confirmFormModal");
+    modal?.classList.toggle("open");
+  }
   return (
-    <section className="FormModal">
-      <form className="FormModal_form">
+    <section className="FormModal" id="confirmFormModal" onClick={toggleModal}>
+      <form
+        className="FormModal_form"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <div className="FormModal_form_inputGroup">
           <h1>Você possui carro?</h1>
           <p>Que estaria disposto a oferecer carona</p>
