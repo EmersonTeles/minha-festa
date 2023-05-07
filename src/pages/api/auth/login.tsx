@@ -10,18 +10,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { name, email, image, provider } = req.body;
 
   const db = (await MongoClient).db("minha-festa-db");
-  const users = db.collection("users");
-  const user = await users.findOne({ email: email });
+  const usersCollection = db.collection("users");
+  const user = await usersCollection.findOne({ email: email });
 
   if (user) {
     return res.status(200).json(user);
   } else {
     try {
-      const result = users.insertOne({
+      const result = usersCollection.insertOne({
         name: name,
         email: email,
         image: image,
         provider: provider,
+        confirmed: false,
+        confirmedAt: null,
         createdAt: getISOStringWithTimezone(),
       });
       return res.status(200).json(result);
