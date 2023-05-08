@@ -25,7 +25,6 @@ function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideP
     try {
       const res = await api.get("/api/guests");
       setGuests(res.data);
-      console.log(res.data);
     } catch (err) {
       console.log(err);
     }
