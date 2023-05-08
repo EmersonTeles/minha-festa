@@ -3,8 +3,16 @@ import mclovin from "@/assets/selfie.png";
 import SingupButton from "./signInButton";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-export default function Banner() {
+import { useEffect } from "react";
+import { BsWhatsapp } from "react-icons/bs";
+import { GiMoneyStack } from "react-icons/gi";
+type BannerProps = {
+  isConfirmed: Boolean;
+};
+
+export default function Banner({ isConfirmed }: BannerProps) {
   const { data: session } = useSession();
+  useEffect(() => {}, [isConfirmed, session]);
   return (
     <section className="banner">
       <div className="banner_photo">
@@ -26,9 +34,11 @@ export default function Banner() {
             href="https://chat.whatsapp.com/H3fZk2qMzsZJISyQg8Ig4o"
           >
             Acesso ao grupo
+            <BsWhatsapp />
           </Link>
           <a href="#contribute" className="banner_confirmed-contribute">
             Contribuir
+            <GiMoneyStack />
           </a>
         </div>
       ) : (

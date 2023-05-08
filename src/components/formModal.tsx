@@ -1,7 +1,11 @@
 import api from "@/utils/api";
 import { useSession } from "next-auth/react";
+import { Dispatch, SetStateAction } from "react";
 
-export default function FormModal() {
+type FormModalProps = {
+  setIsConfirmed: Dispatch<SetStateAction<Boolean>>;
+};
+export default function FormModal({ setIsConfirmed }: FormModalProps) {
   const { data: session } = useSession();
   function toggleModal() {
     const modal = document.querySelector("#confirmFormModal");
@@ -19,7 +23,7 @@ export default function FormModal() {
         user: session?.user,
       });
       toggleModal();
-      //você está confirmado!
+      setIsConfirmed(true);
     } catch (err) {
       console.log(err);
     }

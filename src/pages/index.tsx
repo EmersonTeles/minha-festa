@@ -15,9 +15,13 @@ import { SignInModal } from "@/components/signInModal";
 import clientPromise from "@/lib/mongodb";
 import FormModal from "@/components/formModal";
 import GuestList from "@/components/guestList";
+import { useEffect, useState } from "react";
 
-function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function Home(this: any, { isConnected }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { data: session } = useSession();
+  const [isConfirmed, setIsConfirmed] = useState<Boolean>(session?.user.isConfirmed || false);
+
+  useEffect(() => {}, [isConfirmed, session]);
   return (
     <>
       <Head>
@@ -38,13 +42,13 @@ function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideP
       <main className="main">
         <div className={isConnected ? "main_db-true" : "main_db-false"}></div>
         <Header user={session?.user} />
-        <Banner />
+        <Banner isConfirmed={isConfirmed} />
         <About />
         <Instructions />
         <Contribute />
         <Location />
         <SignInModal />
-        <FormModal />
+        <FormModal setIsConfirmed={setIsConfirmed} />
         <Image className="cardsBlackJack" src={Cards} alt="cards" />
         <Image className="TreesLeft" src={TreesLeft} alt="TreesLeft" />
         <Image className="TreesRight" src={TreesRight} alt="TreesRight" />
