@@ -66,16 +66,16 @@ export default function FormModal({ session, updateSession }: FormModalProps) {
               <option value="Guará">Guará</option>
               <option value="Taguatinga">Taguatinga</option>
               <option value="Ceilândia">Ceilândia</option>
-              <option value="samambaia">Samambaia</option>
-              <option value="gama">Gama</option>
+              <option value="Samambaia">Samambaia</option>
+              <option value="Gama">Gama</option>
+              <option value="Novo Gama">Novo Gama</option>
               <option value="Bandeirante">Núcleo Bandeirante</option>
               <option value="Águas claras">Águas Claras</option>
-              <option value="Parkway">Arniqueiras/parkway</option>
+              <option value="Park way">Arniqueiras/parkway</option>
               <option value="Riacho Fundo 1">Riacho Fundo 1</option>
               <option value="Riacho Fundo 2">Riacho Fundo 2</option>
               <option value="Recanto">Recanto das Emas</option>
-              <option value="Candangolandia">Candangolândia</option>
-              <option value="Novo Gama">Novo Gama</option>
+              <option value="Candangolândia">Candangolândia</option>
             </select>
           </div>
           <div className="FormModal_form_content_inputGroup">
