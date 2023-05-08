@@ -18,6 +18,7 @@ export default function FormModal({ session, updateSession }: FormModalProps) {
         neighborhood: formData.get("neighborhood"),
         days: formData.get("days_input"),
         spouse: formData.get("spouse_input"),
+        willContribtute: formData.get("contribute_input"),
         user: session?.user,
       });
       toggleModal();
@@ -95,6 +96,15 @@ export default function FormModal({ session, updateSession }: FormModalProps) {
               <label htmlFor="spouse_yes">Sim</label>
               <input type="radio" id="spouse_no" name="spouse_input" value="False" />
               <label htmlFor="spouse_no">Não, vou sozinho</label>
+            </div>
+          </div>
+          <div className="FormModal_form_content_inputGroup">
+            <h1>Poderá contribuir?</h1>
+            <div className="FormModal_form_content_inputGroup-radio">
+              <input type="radio" id="contribute_yes" name="contribute_input" value="True" />
+              <label htmlFor="contribute_yes">Sim</label>
+              <input type="radio" id="spouse_no" name="contribute_input" value="False" />
+              <label htmlFor="contribute_no">Não</label>
             </div>
           </div>
           <button type="submit">Confirmar Presença</button>

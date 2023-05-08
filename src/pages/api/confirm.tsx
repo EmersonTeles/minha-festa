@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { hasCar, neighborhood, days, spouse, user } = req.body;
+  const { hasCar, neighborhood, days, spouse, user, willContribtute } = req.body;
   const db = (await MongoClient).db("minha-festa-db");
   const users = db.collection("users");
   try {
@@ -23,6 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             neighborhood: neighborhood,
             days: days,
             spouse: spouse == "True" ? true : false,
+            willContribtute: willContribtute == "True" ? true : false,
           },
         },
       }
