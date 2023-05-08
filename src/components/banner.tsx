@@ -1,18 +1,17 @@
 import Image from "next/image";
 import mclovin from "@/assets/selfie.png";
 import SingupButton from "./signInButton";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect } from "react";
 import { BsWhatsapp } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
+import { Session } from "next-auth";
 type BannerProps = {
-  isConfirmed: Boolean;
+  session: Session | null;
 };
 
-export default function Banner({ isConfirmed }: BannerProps) {
-  const { data: session } = useSession();
-  useEffect(() => {}, [isConfirmed, session]);
+export default function Banner({ session }: BannerProps) {
+  useEffect(() => {}, [session]);
   return (
     <section className="banner">
       <div className="banner_photo">

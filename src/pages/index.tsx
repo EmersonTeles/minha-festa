@@ -1,27 +1,40 @@
-import Header from "@/components/header";
-import Banner from "@/components/banner";
-import Instructions from "@/components/instructions";
-import Head from "next/head";
-import About from "@/components/about";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next/types";
-import Cards from "@/assets/cards.png";
-import TreesLeft from "@/assets/trees-left.png";
-import TreesRight from "@/assets/trees-right.png";
-import Image from "next/image";
-import { useSession } from "next-auth/react";
-import Location from "@/components/location";
-import Contribute from "@/components/contribute";
 import { SignInModal } from "@/components/signInModal";
-import clientPromise from "@/lib/mongodb";
+import Instructions from "@/components/instructions";
+import Contribute from "@/components/contribute";
 import FormModal from "@/components/formModal";
 import GuestList from "@/components/guestList";
+import Location from "@/components/location";
+import Banner from "@/components/banner";
+import Header from "@/components/header";
+import About from "@/components/about";
+import clientPromise from "@/lib/mongodb";
+import TreesRight from "@/assets/trees-right.png";
+import TreesLeft from "@/assets/trees-left.png";
+import Cards from "@/assets/cards.png";
+import { useSession } from "next-auth/react";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next/types";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Head from "next/head";
+import api from "@/utils/api";
 
-function Home(this: any, { isConnected }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const { data: session } = useSession();
-  const [isConfirmed, setIsConfirmed] = useState<Boolean>(session?.user.isConfirmed || false);
-
-  useEffect(() => {}, [isConfirmed, session]);
+function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const { data: session, update } = useSession();
+  const [guests, setGuests] = useState<any[]>([]);
+  const getGuests = async () => {
+    try {
+      const res = await api.get("/api/guests");
+      setGuests(res.data);
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    if (session) {
+      getGuests();
+    }
+  }, [session]);
   return (
     <>
       <Head>
@@ -42,14 +55,14 @@ function Home(this: any, { isConnected }: InferGetServerSidePropsType<typeof get
       <main className="main">
         <div className={isConnected ? "main_db-true" : "main_db-false"}></div>
         <Header user={session?.user} />
-        <Banner isConfirmed={isConfirmed} />
+        <Banner session={session} />
         <About />
         <Instructions />
         <Contribute />
-        <GuestList />
+        <GuestList guests={guests} session={session} />
         <Location />
         <SignInModal />
-        <FormModal setIsConfirmed={setIsConfirmed} />
+        <FormModal updateSession={update} session={session} />
         <Image className="cardsBlackJack" src={Cards} alt="cards" />
         <Image className="TreesLeft" src={TreesLeft} alt="TreesLeft" />
         <Image className="TreesRight" src={TreesRight} alt="TreesRight" />

@@ -1,24 +1,7 @@
-import api from "@/utils/api";
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useSession } from "next-auth/react";
-export default function GuestList() {
-  const [guests, setGuests] = useState<any[]>([]);
-  const { data: session } = useSession();
-  const getData = async () => {
-    try {
-      const res = await api.get("/api/guests");
-      setGuests(res.data);
-      console.log(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    if (session) {
-      getData();
-    }
-  }, [session]);
+import { Key } from "react";
+
+export default function GuestList({ guests, session }: any) {
   return (
     <section className="guestList" id="guestList">
       <div className="guestList_content">
@@ -36,8 +19,8 @@ export default function GuestList() {
             </thead>
             <tbody>
               {session &&
-                guests?.map((guest) => (
-                  <tr key={guest._id}>
+                guests?.map((guest: any, id: Key | null | undefined) => (
+                  <tr key={id}>
                     <td>
                       <Image src={guest.image} alt="foto de perfil" width={50} height={50} />
                     </td>
