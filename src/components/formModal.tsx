@@ -103,7 +103,7 @@ export default function FormModal({ session, updateSession }: FormModalProps) {
             <div className="FormModal_form_content_inputGroup-radio">
               <input type="radio" id="contribute_yes" name="contribute_input" value="True" />
               <label htmlFor="contribute_yes">Sim</label>
-              <input type="radio" id="spouse_no" name="contribute_input" value="False" />
+              <input type="radio" id="contribute_no" name="contribute_input" value="False" />
               <label htmlFor="contribute_no">Não</label>
             </div>
           </div>
