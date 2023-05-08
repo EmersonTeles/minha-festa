@@ -14,6 +14,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const user = await usersCollection.findOne({ email: email });
 
   if (user) {
+    if (provider == "github" && user.provider == "google") {
+      await usersCollection.updateOne(
+        { email: email },
+        { $set: { provider: provider, image: image } }
+      );
+    }
     return res.status(200).json(user);
   } else {
     try {
