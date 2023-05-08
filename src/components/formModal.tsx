@@ -58,25 +58,25 @@ export default function FormModal({ setIsConfirmed }: FormModalProps) {
               <option value="0" disabled>
                 Selecione uma cidade
               </option>
-              <option value="asa_sul">Asa sul</option>
-              <option value="asa_norte">Asa norte</option>
-              <option value="sudoeste">Sudoeste</option>
-              <option value="noroeste">Noroeste</option>
-              <option value="lago_sul">Lago sul</option>
-              <option value="norte">Lago norte</option>
-              <option value="guara">Guará</option>
-              <option value="taguatinga">Taguatinga</option>
-              <option value="ceilandia">Ceilândia</option>
+              <option value="Asa sul">Asa sul</option>
+              <option value="Asa norte">Asa norte</option>
+              <option value="Sudoeste">Sudoeste</option>
+              <option value="Noroeste">Noroeste</option>
+              <option value="Lago sul">Lago sul</option>
+              <option value="Lago norte">Lago norte</option>
+              <option value="Guará">Guará</option>
+              <option value="Taguatinga">Taguatinga</option>
+              <option value="Ceilândia">Ceilândia</option>
               <option value="samambaia">Samambaia</option>
               <option value="gama">Gama</option>
-              <option value="bandeirante">Núcleo Bandeirante</option>
-              <option value="aguas_claras">Águas Claras</option>
-              <option value="parkway">Arniqueiras/parkway</option>
-              <option value="riacho_fundo_1">Riacho Fundo 1</option>
-              <option value="riacho_fundo_2">Riacho Fundo 2</option>
-              <option value="recanto">Recanto das Emas</option>
-              <option value="candangolandia">Candangolândia</option>
-              <option value="novo_Gama">Novo Gama</option>
+              <option value="Bandeirante">Núcleo Bandeirante</option>
+              <option value="Águas claras">Águas Claras</option>
+              <option value="Parkway">Arniqueiras/parkway</option>
+              <option value="Riacho Fundo 1">Riacho Fundo 1</option>
+              <option value="Riacho Fundo 2">Riacho Fundo 2</option>
+              <option value="Recanto">Recanto das Emas</option>
+              <option value="Candangolandia">Candangolândia</option>
+              <option value="Novo Gama">Novo Gama</option>
             </select>
           </div>
           <div className="FormModal_form_content_inputGroup">

@@ -46,6 +46,7 @@ function Home(this: any, { isConnected }: InferGetServerSidePropsType<typeof get
         <About />
         <Instructions />
         <Contribute />
+        <GuestList />
         <Location />
         <SignInModal />
         <FormModal setIsConfirmed={setIsConfirmed} />
