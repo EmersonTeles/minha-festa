@@ -8,8 +8,8 @@ export default function SignInButton() {
     modal?.classList.toggle("open");
   }
   function toggleConfirmModal() {
-    const modal = document.querySelector("#confirmFormModal");
-    modal?.classList.toggle("open");
+    //const modal = document.querySelector("#confirmFormModal");
+    //modal?.classList.toggle("open");
   }
   return (
     <>
@@ -18,9 +18,12 @@ export default function SignInButton() {
           Quero participar
         </button>
       ) : (
-        <button type="button" className="Confirm_button confirm" onClick={toggleConfirmModal}>
-          Confirmar presença
-        </button>
+        <div className="subscription_Done">
+          <button type="button" className="Confirm_button confirm" onClick={toggleConfirmModal}>
+            Confirmar presença
+          </button>
+          <span>*inscrições encerradas</span>
+        </div>
       )}
     </>
   );

@@ -8,7 +8,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
   const db = (await MongoClient).db("minha-festa-db");
   const users = db.collection("users");
-  const confirmedUsers = await users.find({ isConfirmed: true }).toArray();
+  const confirmedUsers: object[] = await users
+    .find(
+      { isConfirmed: true },
+      { projection: { name: 1, image: 1, isConfirmed: 1, confirmation_data: 1 } }
+    )
+    .toArray();
   try {
     return res.status(200).json(confirmedUsers);
   } catch (err) {

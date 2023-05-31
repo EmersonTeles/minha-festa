@@ -86,7 +86,11 @@
 .date {
   color: white;
 }
-
+.subscription_Done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .Confirm_button {
   height: 3.5rem;
   width: 18rem;
@@ -104,9 +108,10 @@
   }
 }
 .confirm {
-  background-color: #ff9c03;
+  background-color: #72706c;
+  margin: 1rem;
   &:hover {
-    background-color: rgb(255, 156, 3, 0.8);
+    background-color: #8b8a88;
   }
 }
 @media (max-width: 768px) {
